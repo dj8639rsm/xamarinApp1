@@ -14,13 +14,16 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <!--Orientationプロパティ追加、横並びに変更-->
-    <!--Spacingプロパティ追加、要素間の隙間の設定-->
-    <StackLayout Orientation="Horizontal"
-                 Spacing="25">
-        <BoxView Color="Red"/>
-        <BoxView Color="Green"/>
-        <BoxView Color="Yellow"/>
+    <!--HorizontalOptionsプロパティ設定、配置場所の確認-->
+    <StackLayout>
+        <BoxView Color="Red"
+                 HorizontalOptions="Start"/>
+        <BoxView Color="Green"
+                 HorizontalOptions="Center"/>
+        <BoxView Color="Yellow"
+                 HorizontalOptions="End"/>
+        <BoxView Color="Silver"
+                 HorizontalOptions="Fill"/>
     </StackLayout>
 
 </ContentPage>
