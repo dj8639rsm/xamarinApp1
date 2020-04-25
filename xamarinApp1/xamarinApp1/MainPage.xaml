@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:xamarinApp1"
+             x:Class="xamarinApp1.MainPage">
+    
+    <!--iOS対応の余白設定-->
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">0,20,0,0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <StackLayout>
+        <BoxView Color="Red"/>
+        <BoxView Color="Green"/>
+        <BoxView Color="Yellow"/>
+    </StackLayout>
+
+</ContentPage>
