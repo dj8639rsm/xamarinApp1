@@ -14,16 +14,16 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <!--HorizontalOptionsプロパティ設定、配置場所の確認-->
+    <!--VerticalOptionsプロパティ設定、配置場所の確認-->
     <StackLayout>
         <BoxView Color="Red"
-                 HorizontalOptions="Start"/>
+                 VerticalOptions="StartAndExpand"/>
         <BoxView Color="Green"
-                 HorizontalOptions="Center"/>
+                 VerticalOptions="CenterAndExpand"/>
         <BoxView Color="Yellow"
-                 HorizontalOptions="End"/>
+                 VerticalOptions="EndAndExpand"/>
         <BoxView Color="Silver"
-                 HorizontalOptions="Fill"/>
+                 VerticalOptions="FillAndExpand"/>
     </StackLayout>
 
 </ContentPage>
