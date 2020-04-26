@@ -20,11 +20,7 @@ namespace xamarinApp1
             InitializeComponent();   
         }
 
-        private async void ButtonScrollTo_Clicked(object sender, EventArgs e)
-        {
-            await this.scrollView.ScrollToAsync(this.boxViewYellow, ScrollToPosition.Start, true);
-            Debug.WriteLine($"Scroll position is{this.scrollView.ScrollX},{this.scrollView.ScrollY}");
-        }
+        
     }
 }
 

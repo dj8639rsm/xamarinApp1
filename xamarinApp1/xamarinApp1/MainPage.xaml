@@ -14,29 +14,27 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <StackLayout>
-        <Button Text="Scroll"
-                Clicked="ButtonScrollTo_Clicked"/>
-        <ScrollView x:Name="scrollView" VerticalOptions="FillAndExpand"
-                    Orientation="Both">
-            <StackLayout>
-                <BoxView Color="Red"
-                     WidthRequest="500"
-                     HeightRequest="500"/>
-                <BoxView Color="Blue"
-                     WidthRequest="500"
-                     HeightRequest="500"/>
-                <BoxView x:Name="boxViewYellow" Color="Yellow"
-                     WidthRequest="500"
-                     HeightRequest="500"/>
-                <BoxView Color="Olive"
-                     WidthRequest="500"
-                     HeightRequest="500"/>
-            </StackLayout>
-        </ScrollView>
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Label Text="Hello World Default"
+               FontSize="Default"/>
+        <Label Text="Hello WorldBold"
+               FontAttributes="Bold"/>
+        <Label Text="Hello World Itaric"
+               FontAttributes="Italic"/>
+        <Label Text="Hello World Bold Itaric"
+               FontAttributes="Bold" />
+        <Label Text="Hello World Large"
+               FontSize="Large"/>
+        <Label Text="Hello World mediam"
+               FontSize="Medium"/>
+        <Label Text="Hello World Small"
+               FontSize="Small"/>
+        <Label Text="Hello World Micro"
+               FontSize="Micro"/>
+        <Label Text="Hello World Number"
+               FontSize="24"/>
+
+
     </StackLayout>
-
-
-
-
 </ContentPage>
