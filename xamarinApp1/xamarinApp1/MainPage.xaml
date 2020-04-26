@@ -16,25 +16,8 @@
 
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
+        <ActivityIndicator Color="red"
+                           IsRunning="True"/>
 
-        <Label>
-            <Label.FormattedText>
-                <FormattedString>
-                    <Span Text="H"
-                          FontAttributes="Bold"
-                          TextColor="red"/>
-                    <Span Text="e"
-                          BackgroundColor="Silver"/>
-                    <Span Text="l"
-                          FontAttributes="Italic"
-                          FontSize="Small"/>
-                    <Span Text="l"
-                          BackgroundColor="Aqua"
-                          FontSize="Large"/>
-                    <Span Text="o"/>
-                </FormattedString>
-            </Label.FormattedText>
-        </Label>
-        
     </StackLayout>
 </ContentPage>
