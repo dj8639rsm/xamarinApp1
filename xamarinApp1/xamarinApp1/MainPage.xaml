@@ -17,24 +17,24 @@
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
 
-        <Frame WidthRequest="100"
-               HeightRequest="100">
-            <Label Text="Start"
-               HorizontalTextAlignment="Start"
-               VerticalTextAlignment="Start"/>
-        </Frame>
-        <Frame WidthRequest="100"
-               HeightRequest="100">
-            <Label Text="Center"
-                   HorizontalTextAlignment="Center"
-                   VerticalTextAlignment="Center"/>
-        </Frame>
-        <Frame WidthRequest="100"
-               HeightRequest="100">
-            <Label Text="End"
-                   HorizontalOptions="End"
-                   VerticalOptions="End"/>
-        </Frame>
-
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="H"
+                          FontAttributes="Bold"
+                          TextColor="red"/>
+                    <Span Text="e"
+                          BackgroundColor="Silver"/>
+                    <Span Text="l"
+                          FontAttributes="Italic"
+                          FontSize="Small"/>
+                    <Span Text="l"
+                          BackgroundColor="Aqua"
+                          FontSize="Large"/>
+                    <Span Text="o"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        
     </StackLayout>
 </ContentPage>
