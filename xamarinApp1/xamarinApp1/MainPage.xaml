@@ -14,14 +14,15 @@
         </OnPlatform>
     </ContentPage.Padding>
 
+    <ContentPage.BindingContext>
+        <local:MyPageViewModel/>
+    </ContentPage.BindingContext>
+
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
-        
-        <Label x:Name="label"/>
-
+        <Label Text="{Binding Message}"/>
         <Button Text="Default"
-                Clicked="ButtonLabelChenge_Clicked"/>
-        
-
+            Command="{Binding NowCommand}"/>
     </StackLayout>
+
 </ContentPage>
