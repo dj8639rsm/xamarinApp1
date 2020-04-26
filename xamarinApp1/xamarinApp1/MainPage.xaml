@@ -17,14 +17,12 @@
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
 
-        <Frame WidthRequest="75">
-            <Label Text="this is a long long long long long long long long long long text!!!!!"
-                   LineBreakMode="CharacterWrap"/>
-        </Frame>
-        <Frame WidthRequest="75">
-            <Label Text="this is a long long long long long long long long long long text!!!!!"
-                   LineBreakMode="TailTruncation"/>
-        </Frame>
-        
+        <Label Text="Red"
+               TextColor="Red"/>
+        <Label Text="Blue"
+               TextColor="Blue"/>
+        <Label Text="Yellow"
+               TextColor="Yellow"/>
+
     </StackLayout>
 </ContentPage>
