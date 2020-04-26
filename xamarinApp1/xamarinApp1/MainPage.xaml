@@ -14,20 +14,22 @@
         </OnPlatform>
     </ContentPage.Padding>
 
+    <RelativeLayout>
+        <BoxView x:Name="boxViewBlue"
+                 Color="Blue"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=.5,Constant=-50}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=.5,Constant=-50}"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent,Property=Width,Factor=.5}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent,Property=Height,Factor=.5}"/>
 
-    <AbsoluteLayout>
         <BoxView Color="Red"
-                 AbsoluteLayout.LayoutBounds="10,10,100,100"/>
-        <BoxView Color="Blue"
-                 AbsoluteLayout.LayoutBounds=".3,.3,.3,.3"
-                 AbsoluteLayout.LayoutFlags="All"/>
-        <BoxView Color="Olive"
-                 AbsoluteLayout.LayoutBounds=".0,.5,25,250"
-                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
-        <BoxView Color="Yellow"
-                 AbsoluteLayout.LayoutBounds=".5,.0,100,50"
-                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                 WidthRequest="100"
+                 HeightRequest="100"
+                 RelativeLayout.XConstraint="{ConstraintExpression Type=RelativeToView,ElementName=boxViewBlue,Property=X,Constant=-100}"
+                 RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToView,ElementName=boxViewBlue,Property=Y,Constant=-100}"/>
+    </RelativeLayout>
 
-    </AbsoluteLayout>
+
+
 
 </ContentPage>
