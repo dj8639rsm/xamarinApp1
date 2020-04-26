@@ -17,12 +17,24 @@
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
 
-        <Label Text="Red"
-               TextColor="Red"/>
-        <Label Text="Blue"
-               TextColor="Blue"/>
-        <Label Text="Yellow"
-               TextColor="Yellow"/>
+        <Frame WidthRequest="100"
+               HeightRequest="100">
+            <Label Text="Start"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Start"/>
+        </Frame>
+        <Frame WidthRequest="100"
+               HeightRequest="100">
+            <Label Text="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"/>
+        </Frame>
+        <Frame WidthRequest="100"
+               HeightRequest="100">
+            <Label Text="End"
+                   HorizontalOptions="End"
+                   VerticalOptions="End"/>
+        </Frame>
 
     </StackLayout>
 </ContentPage>
