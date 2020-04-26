@@ -16,8 +16,16 @@
 
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
-        <ActivityIndicator Color="red"
-                           IsRunning="True"/>
+
+        <Button Text="Default"/>
+        <Button Text="Border"
+                BorderColor="Olive"
+                BorderWidth="2"
+                WidthRequest="60"
+                HeightRequest="60"
+                BackgroundColor="Teal"
+                TextColor="White"/>
+
 
     </StackLayout>
 </ContentPage>
