@@ -16,16 +16,12 @@
 
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
+        
+        <Label x:Name="label"/>
 
-        <Button Text="Default"/>
-        <Button Text="Border"
-                BorderColor="Olive"
-                BorderWidth="2"
-                WidthRequest="60"
-                HeightRequest="60"
-                BackgroundColor="Teal"
-                TextColor="White"/>
-
+        <Button Text="Default"
+                Clicked="ButtonLabelChenge_Clicked"/>
+        
 
     </StackLayout>
 </ContentPage>

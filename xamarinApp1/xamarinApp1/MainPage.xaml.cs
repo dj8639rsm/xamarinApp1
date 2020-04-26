@@ -20,7 +20,10 @@ namespace xamarinApp1
             InitializeComponent();   
         }
 
-        
+        private void ButtonLabelChenge_Clicked(object sender, EventArgs e)
+        {
+            this.label.Text = DateTime.Now.ToString();
+        }
     }
 }
 
