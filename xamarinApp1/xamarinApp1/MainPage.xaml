@@ -15,15 +15,29 @@
     </ContentPage.Padding>
 
     <!--VerticalOptionsプロパティ設定、配置場所の確認-->
-    <StackLayout>
-        <BoxView Color="Red"
-                 VerticalOptions="StartAndExpand"/>
-        <BoxView Color="Green"
-                 VerticalOptions="CenterAndExpand"/>
-        <BoxView Color="Yellow"
-                 VerticalOptions="EndAndExpand"/>
-        <BoxView Color="Silver"
-                 VerticalOptions="FillAndExpand"/>
+    <StackLayout VerticalOptions="Start">
+        <StackLayout Orientation="Horizontal">
+
+            <BoxView WidthRequest="50"
+                 HeightRequest="50"
+                 Color="Purple"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"/>
+
+            <StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="名前"
+                           FontAttributes="Bold"/>
+                    <Label Text="@xxx-xxxx"/>
+                </StackLayout>
+                <Label Text="本文本文本文本文本文本文本文本文本文本文本文"
+                       VerticalOptions="FillAndExpand"/>
+                <Label Text="tweeted by sample"
+                       VerticalOptions="End"/>
+            </StackLayout>
+            
+            
+        </StackLayout>
     </StackLayout>
 
 </ContentPage>
