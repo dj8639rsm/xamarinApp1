@@ -18,11 +18,8 @@
         <local:MyPageViewModel/>
     </ContentPage.BindingContext>
 
-    <StackLayout HorizontalOptions="Center"
-                 VerticalOptions="Center">
-        <Label Text="{Binding Message}"/>
-        <Button Text="Default"
-            Command="{Binding NowCommand}"/>
-    </StackLayout>
+    <ListView ItemsSource="{Binding perple}">
+        
+    </ListView>
 
 </ContentPage>

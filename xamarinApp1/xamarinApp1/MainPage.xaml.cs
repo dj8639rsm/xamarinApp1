@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
@@ -13,12 +15,17 @@ namespace xamarinApp1
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
+
+    public class Person
+    {
+        public string Name { get; set; }
+    }
     public class BindableBase:INotifyPropertyChanged
     {
 
         protected BindableBase()
         {
-
+            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -40,20 +47,18 @@ namespace xamarinApp1
 
     public class MyPageViewModel:BindableBase
     {
-        private string message;
-        //ローカル変数の定義
-
-        public string Message
-        {
-            get { return this.message; }
-            set { this.SerProperty(ref this.message, value); }
-        }
-        
-        public Command NowCommand { get; }
+        public ObservableCollection<Person> perple { get; } = new ObservableCollection<Person>();
 
         public MyPageViewModel()
         {
-            this.NowCommand = new Command(_ => this.Message = DateTime.Now.ToString());
+            var r = new Random();
+            Device.StartTimer(
+                TimeSpan.FromSeconds(5),
+                () =>
+                {
+                    this.perple.Add(new Person { Name = $"tanaka{ r.Next()} " });
+                    return true;
+                });
         }
     }
     
