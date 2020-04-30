@@ -75,7 +75,7 @@ namespace xamarinApp1
         public MyPageViewModel()
         {
             this.NowCommand = new Command(
-                _ => this.Message = DateTime.Now.ToString(),
+                x => this.Message = DateTime.Now.ToString((string)x),
                 _ => this.CanExcute);
         }
         

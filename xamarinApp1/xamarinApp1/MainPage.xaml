@@ -22,7 +22,8 @@
                  VerticalOptions="Center">
         <Label Text="{Binding Message}"/>
         <Button Text="Default"
-                Command="{Binding NowCommand}"/>
+                Command="{Binding NowCommand}"
+                CommandParameter="yyyy/MM/dd"/>
         <Switch IsToggled="{Binding CanExcute,Mode=TwoWay}"/>
     </StackLayout>
 
