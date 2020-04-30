@@ -18,12 +18,12 @@
         <local:MyPageViewModel/>
     </ContentPage.BindingContext>
 
-    <ListView ItemsSource="{Binding perple}">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Name}"/>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Label Text="{Binding Message}"/>
+        <Button Text="Default"
+                Command="{Binding NowCommand}"/>
+        <Switch IsToggled="{Binding CanExcute,Mode=TwoWay}"/>
+    </StackLayout>
 
 </ContentPage>

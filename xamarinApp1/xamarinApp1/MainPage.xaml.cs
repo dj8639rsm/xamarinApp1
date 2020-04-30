@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Dynamic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,7 +37,7 @@ namespace xamarinApp1
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        protected virtual bool SerProperty<T>(ref T field, T value, [CallerMemberName]string propertyName = null)
+        protected virtual bool SetProperty<T>(ref T field, T value, [CallerMemberName]string propertyName = null)
         {
             if(object.Equals(field, value)) { return false; }
 
@@ -45,21 +47,38 @@ namespace xamarinApp1
         }
     }
 
-    public class MyPageViewModel:BindableBase
+    public class MyPageViewModel : BindableBase
     {
-        public ObservableCollection<Person> perple { get; } = new ObservableCollection<Person>();
+        private string message;
+
+        public string Message
+        {
+            get {return this.message;}
+            set { this.SetProperty(ref this.message,value); }
+
+        }
+
+        public Command NowCommand { get; }
+
+        private bool canExcute;
+
+        public bool CanExcute
+        {
+            get { return this.canExcute; }
+            set
+            {
+                this.SetProperty(ref this.canExcute, value);
+                this.NowCommand.ChangeCanExecute();
+            }
+        }
 
         public MyPageViewModel()
         {
-            var r = new Random();
-            Device.StartTimer(
-                TimeSpan.FromSeconds(5),
-                () =>
-                {
-                    this.perple.Add(new Person { Name = $"tanaka{ r.Next()} " });
-                    return true;
-                });
+            this.NowCommand = new Command(
+                _ => this.Message = DateTime.Now.ToString(),
+                _ => this.CanExcute);
         }
+        
     }
     
     public partial class MainPage : ContentPage
