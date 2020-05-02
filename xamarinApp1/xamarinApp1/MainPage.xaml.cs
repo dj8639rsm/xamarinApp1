@@ -25,12 +25,11 @@ namespace xamarinApp1
         public MainPage()
         {
             InitializeComponent();
+
+            this.image.Source = ImageSource.FromFile("40796.jpg");
         }
 
-        private void handle_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            Debug.WriteLine($"{ e.OldTextValue} -> ${ e.NewTextValue}");
-        }
+   
     }
 }
 

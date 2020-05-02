@@ -15,8 +15,8 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Entry TextChanged="handle_TextChanged"/>
 
+        <Image x:Name="image"/>
 
     </StackLayout>
 
