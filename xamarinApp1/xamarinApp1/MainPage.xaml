@@ -16,10 +16,9 @@
 
     <StackLayout>
         <ListView x:Name="listView"
-                  VerticalOptions="FillAndExpand"
-                  IsGroupingEnabled="True"
-                  GroupDisplayBinding="{Binding Name}"
-                  GroupShortNameBinding="{Binding ShortName}">
+               VerticalOptions="FillAndExpand"
+               IsPullToRefreshEnabled="True"
+               Refreshing="Handle_Refreshing">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}"/>

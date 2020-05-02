@@ -23,57 +23,32 @@ namespace xamarinApp1
 
     public partial class MainPage : ContentPage
     {
-        private ObservableCollection<Family> People { get; }
+        private ObservableCollection<Person> People { get; } = new ObservableCollection<Person>(
+            Enumerable.Range(1, 5).Select(x => new Person { Name = $"okazaki{x}" }));
 
         public MainPage()
         {
             InitializeComponent();
 
-            this.People = new ObservableCollection<Family>
-            {
-                new Family("okazakifamily","o")
-                {
-                    new Person {Name = "okazaki1"},
-                    new Person {Name = "okazaki2"},
-                    new Person {Name = "okazaki3"},
-                    new Person {Name = "okazaki4"},
-                },
-                new Family("tanakafamily","t")
-                {
-                    new Person {Name = "tanaka1"},
-                    new Person {Name = "tanaka2"},
-                    new Person {Name = "tanaka3"},
-                    new Person {Name = "tanaka4"},
-                },
-                new Family("kimurafamily","k")
-                {
-                    new Person {Name = "kimura1"},
-                    new Person {Name = "kimura2"},
-                    new Person {Name = "kimura3"},
-                    new Person {Name = "kimura4"},
-                },
-            };
-
             this.listView.ItemsSource = this.People;
         }
+
+        private async void Handle_Refreshing(object sender, EventArgs e)
+        {
+            await Task.Delay(3000);
+            for(int i=0;i<5;i++)
+            {
+                this.People.Add(new Person { Name = $"okazaki{this.People.Count + 1}" });
+            }
+
+            this.listView.IsRefreshing = false;
+        }
     }
 
-    public class Family:ObservableCollection<Person>
+    public class Person
     {
         public string Name { get; set; }
-        public string ShortName { get; set; }
-
-        public Family(string name,string shortName)
-        {
-            this.Name = name;
-            this.ShortName = shortName;
-        }
     }
-        public class Person
-        {
-            public string Name { get; set; }
-        }
 
-    
 }
 
