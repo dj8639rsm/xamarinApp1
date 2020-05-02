@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Dynamic;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -26,7 +27,16 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-            this.image.Source = ImageSource.FromResource("xamarinApp1.40796.jpg");
+            this.image.Source = ImageSource.FromStream(() =>
+              {
+                //MemorｙStorymなどに画像データを流し込む
+                var ms = new MemoryStream();
+
+                //初期位置に戻して返す
+                ms.Seek(0, SeekOrigin.Begin);
+                  return ms;
+              });
+
         }
 
    
