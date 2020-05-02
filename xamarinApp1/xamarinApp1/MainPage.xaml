@@ -16,12 +16,20 @@
 
     <StackLayout>
         <ListView x:Name="listView"
-               VerticalOptions="FillAndExpand"
-               IsPullToRefreshEnabled="True"
-               Refreshing="Handle_Refreshing">
+                 VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}"/>
+                    <TextCell Text="{Binding Name}">
+                        <TextCell.ContextActions>
+                            <MenuItem Text="Menu1"
+                                      IconImageSource="profile.jpg"
+                                      Clicked="MenuItem1_Clicked"/>
+                            <MenuItem Text="Menu2"
+                                      Clicked="MenuItem2_Clicked"/>
+                            <MenuItem Text="Menu3"
+                                      Clicked="MenuItem3_Clicked"/>
+                        </TextCell.ContextActions>
+                    </TextCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

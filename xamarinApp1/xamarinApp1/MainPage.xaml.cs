@@ -19,8 +19,6 @@ namespace xamarinApp1
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
-
-
     public partial class MainPage : ContentPage
     {
         private ObservableCollection<Person> People { get; } = new ObservableCollection<Person>(
@@ -32,23 +30,39 @@ namespace xamarinApp1
 
             this.listView.ItemsSource = this.People;
         }
-
-        private async void Handle_Refreshing(object sender, EventArgs e)
+        private void MenuItem1_Clicked(object sender, EventArgs e)
         {
-            await Task.Delay(3000);
-            for(int i=0;i<5;i++)
-            {
-                this.People.Add(new Person { Name = $"okazaki{this.People.Count + 1}" });
-            }
+            var selectedItem = ((MenuItem)sender).BindingContext as Person;
+            this.DisplayAlert(
+                "Info",
+                $"{selectedItem.Name}selocted",
+                "OK");
+        }
+        private void MenuItem2_Clicked(object sender, EventArgs e)
+        {
+            var selectedItem = ((MenuItem)sender).BindingContext as Person;
+            this.DisplayAlert(
+                "Info",
+                $"{selectedItem.Name}selected",
+                "OK");
+        }
+        private void MenuItem3_Clicked(object sender, EventArgs e)
+        {
+            var selectedItem = ((MenuItem)sender).BindingContext as Person;
+            this.DisplayAlert(
+                "Info",
+                $"{selectedItem.Name}selected",
+                "OK");
+        }
 
-            this.listView.IsRefreshing = false;
+
+
+
+
+        public class Person
+        {
+            public string Name { get; set; }
         }
     }
-
-    public class Person
-    {
-        public string Name { get; set; }
-    }
-
 }
 
