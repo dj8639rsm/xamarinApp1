@@ -24,10 +24,13 @@ namespace xamarinApp1
     {
         public MainPage()
         {
-            InitializeComponent();   
+            InitializeComponent();
         }
 
-        
+        private void handle_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Debug.WriteLine($"{ e.OldTextValue} -> ${ e.NewTextValue}");
+        }
     }
 }
 

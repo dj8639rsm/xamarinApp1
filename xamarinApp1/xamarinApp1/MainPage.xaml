@@ -15,16 +15,7 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Image HeightRequest="150"
-               Source="40796.jpg"
-               Aspect="Fill"/>
-
-        <Image HeightRequest="150"
-               Source="40796.jpg"
-               Aspect="AspectFill"/>
-        <Image HeightRequest="150"
-               Source="40796.jpg"
-               Aspect="AspectFit"/>
+        <Entry TextChanged="handle_TextChanged"/>
 
 
     </StackLayout>
