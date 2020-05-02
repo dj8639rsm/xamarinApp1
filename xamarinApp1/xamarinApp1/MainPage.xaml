@@ -17,14 +17,31 @@
     <StackLayout>
         <Button Text="Additem"
                 Clicked="ButtonAddItem"/>
-        <Label Text="{Binding SelectedItem.Name,Source={x:Reference listView}}"/>
+
+        <Label x:Name="labalSelectedItem"/>
+        
         <ListView x:Name="listView"
-                  VerticalOptions="FillAndExpand">
+                  VerticalOptions="FillAndExpand"
+                  ItemSelected="listView_ItemSelected"
+                  Header="Header">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
+
+            <ListView.Footer>
+                <Label>
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Foo"
+                                  BackgroundColor="Red"/>
+                            <Span Text="ter"
+                                  BackgroundColor="Lime"/>
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+            </ListView.Footer>
         </ListView>
     </StackLayout>
 

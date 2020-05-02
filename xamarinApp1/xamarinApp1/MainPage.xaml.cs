@@ -34,7 +34,13 @@ namespace xamarinApp1
         }
         private void ButtonAddItem(object sender, EventArgs e)
         {
-            this.People.Add(new Person { Name = $"olazuki{DateTime.Now}" });
+            this.People.Add(new Person { Name = $"okazuki{DateTime.Now}" });
+        }
+
+        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            var selectedItem = (Person)e.SelectedItem;
+            this.labalSelectedItem.Text = selectedItem.Name;
         }
 
         public class Person
