@@ -19,35 +19,61 @@ namespace xamarinApp1
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
-    
-    
+
+
     public partial class MainPage : ContentPage
     {
-        private ObservableCollection<Person> People { get; } = new ObservableCollection<Person>();
-        
+        private ObservableCollection<Family> People { get; }
+
         public MainPage()
         {
             InitializeComponent();
 
+            this.People = new ObservableCollection<Family>
+            {
+                new Family("okazakifamily","o")
+                {
+                    new Person {Name = "okazaki1"},
+                    new Person {Name = "okazaki2"},
+                    new Person {Name = "okazaki3"},
+                    new Person {Name = "okazaki4"},
+                },
+                new Family("tanakafamily","t")
+                {
+                    new Person {Name = "tanaka1"},
+                    new Person {Name = "tanaka2"},
+                    new Person {Name = "tanaka3"},
+                    new Person {Name = "tanaka4"},
+                },
+                new Family("kimurafamily","k")
+                {
+                    new Person {Name = "kimura1"},
+                    new Person {Name = "kimura2"},
+                    new Person {Name = "kimura3"},
+                    new Person {Name = "kimura4"},
+                },
+            };
+
             this.listView.ItemsSource = this.People;
-
         }
-        private void ButtonAddItem(object sender, EventArgs e)
+    }
+
+    public class Family:ObservableCollection<Person>
+    {
+        public string Name { get; set; }
+        public string ShortName { get; set; }
+
+        public Family(string name,string shortName)
         {
-            this.People.Add(new Person { Name = $"okazuki{DateTime.Now}" });
+            this.Name = name;
+            this.ShortName = shortName;
         }
-
-        private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            var selectedItem = (Person)e.SelectedItem;
-            this.labalSelectedItem.Text = selectedItem.Name;
-        }
-
+    }
         public class Person
         {
             public string Name { get; set; }
         }
 
-    }
+    
 }
 

@@ -15,33 +15,16 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Button Text="Additem"
-                Clicked="ButtonAddItem"/>
-
-        <Label x:Name="labalSelectedItem"/>
-        
         <ListView x:Name="listView"
                   VerticalOptions="FillAndExpand"
-                  ItemSelected="listView_ItemSelected"
-                  Header="Header">
+                  IsGroupingEnabled="True"
+                  GroupDisplayBinding="{Binding Name}"
+                  GroupShortNameBinding="{Binding ShortName}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Name}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
-
-            <ListView.Footer>
-                <Label>
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Foo"
-                                  BackgroundColor="Red"/>
-                            <Span Text="ter"
-                                  BackgroundColor="Lime"/>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
-            </ListView.Footer>
         </ListView>
     </StackLayout>
 
