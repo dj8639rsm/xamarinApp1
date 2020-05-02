@@ -23,23 +23,25 @@ namespace xamarinApp1
     
     public partial class MainPage : ContentPage
     {
+        private ObservableCollection<Person> People { get; } = new ObservableCollection<Person>();
+        
         public MainPage()
         {
             InitializeComponent();
 
-            this.image.Source = ImageSource.FromStream(() =>
-              {
-                //MemorｙStorymなどに画像データを流し込む
-                var ms = new MemoryStream();
-
-                //初期位置に戻して返す
-                ms.Seek(0, SeekOrigin.Begin);
-                  return ms;
-              });
+            this.listView.ItemsSource = this.People;
 
         }
+        private void ButtonAddItem(object sender, EventArgs e)
+        {
+            this.People.Add(new Person { Name = $"olazuki{DateTime.Now}" });
+        }
 
-   
+        public class Person
+        {
+            public string Name { get; set; }
+        }
+
     }
 }
 
