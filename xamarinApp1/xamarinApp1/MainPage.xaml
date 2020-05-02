@@ -17,6 +17,7 @@
     <StackLayout>
         <Button Text="Additem"
                 Clicked="ButtonAddItem"/>
+        <Label Text="{Binding SelectedItem.Name,Source={x:Reference listView}}"/>
         <ListView x:Name="listView"
                   VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
