@@ -26,7 +26,7 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-            this.image.Source = ImageSource.FromFile("40796.jpg");
+            this.image.Source = ImageSource.FromResource("xamarinApp1.40796.jpg");
         }
 
    

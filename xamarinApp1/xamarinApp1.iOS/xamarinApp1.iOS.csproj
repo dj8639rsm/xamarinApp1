@@ -133,7 +133,4 @@
       <Name>xamarinApp1</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\40796.jpg" />
-  </ItemGroup>
 </Project>
