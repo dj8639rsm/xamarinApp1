@@ -14,17 +14,19 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.BindingContext>
-        <local:MyPageViewModel/>
-    </ContentPage.BindingContext>
+    <StackLayout>
+        <Image HeightRequest="150"
+               Source="40796.jpg"
+               Aspect="Fill"/>
 
-    <StackLayout HorizontalOptions="Center"
-                 VerticalOptions="Center">
-        <Label Text="{Binding Message}"/>
-        <Button Text="Default"
-                Command="{Binding NowCommand}"
-                CommandParameter="yyyy/MM/dd"/>
-        <Switch IsToggled="{Binding CanExcute,Mode=TwoWay}"/>
+        <Image HeightRequest="150"
+               Source="40796.jpg"
+               Aspect="AspectFill"/>
+        <Image HeightRequest="150"
+               Source="40796.jpg"
+               Aspect="AspectFit"/>
+
+
     </StackLayout>
 
 </ContentPage>
