@@ -133,4 +133,7 @@
       <Name>xamarinApp1</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\40796.jpg" />
+  </ItemGroup>
 </Project>

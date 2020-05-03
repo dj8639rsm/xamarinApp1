@@ -20,12 +20,20 @@
 
     <StackLayout>
         <ListView ItemsSource="{Binding People}"
-                 VerticalOptions="FillAndExpand">
+                 VerticalOptions="FillAndExpand"
+                  HasUnevenRows="True">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <EntryCell Text="{Binding Name}"
-                               Label="名前"
-                               Keyboard="Text"/>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="名前"/>
+                            <Label Text="{Binding Name}"
+                                   FontAttributes="Italic"/>
+                            <Image Source="40796.jpg"
+                                   HeightRequest="25"/>
+                        </StackLayout>
+                    </ViewCell>
+
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

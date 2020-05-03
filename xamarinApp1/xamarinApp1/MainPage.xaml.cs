@@ -27,6 +27,7 @@ namespace xamarinApp1
     public class BindableBase : INotifyPropertyChanged
     {
 
+
         protected BindableBase()
         {
 
@@ -51,6 +52,7 @@ namespace xamarinApp1
 
     public class MyPageViewModel : BindableBase
     {
+
         public ObservableCollection<Person> People { get; } = new ObservableCollection<Person>(
             Enumerable.Range(1, 5).Select(x => new Person { Name = $"okazaki{x}" }));
 
