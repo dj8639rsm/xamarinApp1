@@ -86,13 +86,10 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-            this.Resources["dynamicLabelStyle"] = this.Resources["redLabelStyle"];
+           
         }
 
-        private void Handle_Clicked(object sender, EventArgs e)
-        {
-            this.Resources["dynamicLabelStyle"] = this.Resources["blueLabelStyle"];
-        }
+      
     }
 
     public class Item

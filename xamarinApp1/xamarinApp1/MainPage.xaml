@@ -14,45 +14,37 @@
             <On Platform="iOS">0,20,0,0</On>
         </OnPlatform>
     </ContentPage.Padding>
-    
+
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="labelStyle"
-                TargetType="Label">
-                <Setter Property="HorizontalOptions"
-                        Value="Center"/>
-                <Setter Property="FontSize"
-                        Value="Large"/>
-                <Setter Property="FontAttributes"
-                        Value="Italic" />
-            </Style>
-
-            <Style x:Key="blueLabelStyle"
-                   TargetType="Label"
-                   BasedOn="{StaticResource labelStyle}">
-                <Setter Property="TextColor"
-                        Value="Blue"/>
-            </Style>
-
-            <Style x:Key="redLabelStyle"
-                   TargetType="Label"
-                   BasedOn="{StaticResource labelStyle}">
+            <Style x:Key="customTitleStyle"
+                TargetType="Label"
+               BaseResourceKey="TitleStyle">
                 <Setter Property="TextColor"
                         Value="Red"/>
             </Style>
-            <Style x:Key="yellowLabelStyle"
-                   TargetType="Label"
-                   BasedOn="{StaticResource labelStyle}">
-                <Setter Property="TextColor"
-                        Value="Yellow"/>
-            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+
     <StackLayout>
-        <Label Text="ここのスタイルを実行時に切り替えます"
-               Style="{DynamicResource dynamicLabelStyle}"/>
-        <Button Text="スタイルの切り替え"
-                Clicked="Handle_Clicked"/>
+        <Label Text="カスタムのたいとる"
+               Style="{StaticResource customTitleStyle}"/>
+        <Label Text="タイトル"
+               Style="{DynamicResource TitleStyle}"/>
+        <Label Text="サブタイトル"
+               Style="{DynamicResource SubtitleStyle}"/>
+        <Label Text="キャプション"
+               Style="{DynamicResource CaptinStyle}"/>
+        <Label Text="リストのテキスト"
+               Style="{DynamicResource ListItemTextStyle}"/>
+        <Label Text="リストの詳細テキスト"
+               Style="{DynamicResource ListItemDetailStyle}"/>
+        <Label Text="ボディ"
+               Style="{DynamicResource BodyStyle}"/>
+        <Label Text="未指定"/>
+
+
+
     </StackLayout>
 
 </ContentPage>
