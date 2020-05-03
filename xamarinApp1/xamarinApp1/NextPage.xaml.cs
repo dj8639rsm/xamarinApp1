@@ -16,5 +16,10 @@ namespace xamarinApp1
         {
             InitializeComponent();
         }
+
+        private void Handle_Cliclked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

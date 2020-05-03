@@ -10,5 +10,7 @@
                  VerticalOptions="Center">
         <Label x:Name="label"
                FontSize="Large"/>
+        <Button Text="GoBack"
+                Clicked="Handle_Cliclked1"/>
     </StackLayout>
 </ContentPage>
