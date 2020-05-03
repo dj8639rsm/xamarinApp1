@@ -18,12 +18,9 @@
     </ContentPage.Padding>
 
     <StackLayout VerticalOptions="Center">
-        <Stepper x:Name="stepper"
-                 Maximum="100"
-                 Minimum="20"
-                 Increment="5"
-                 HorizontalOptions="Center"/>
-        <Label Text="{Binding Value, Source={x:Reference stepper}}"
+        <Switch x:Name="switch"
+                HorizontalOptions="Center"/>
+        <Label Text="{Binding IsToggled, Source={x:Reference switch}}"
                HorizontalOptions="Center"/>
     </StackLayout>
     
