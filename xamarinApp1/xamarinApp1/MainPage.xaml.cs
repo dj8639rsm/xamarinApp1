@@ -84,13 +84,22 @@ namespace xamarinApp1
         public MainPage()
         {
             InitializeComponent();
-
-         
-
         }
 
-        
-       
+        private async void Handle_Clicked(object sender, EventArgs e)
+        {
+            await this.Navigation.PushModalAsync(new NextPage("これはパラメーターです"));
+        }
+    }
+
+    public partial class NextPage:ContentPage
+    {
+        public NextPage(string parameter)
+        {
+            InitializeComponent();
+
+            this.label.Text = parameter;
+        }
     }
 }
 
