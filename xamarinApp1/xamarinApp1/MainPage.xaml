@@ -14,25 +14,22 @@
         </OnPlatform>
     </ContentPage.Padding>
 
+    <ContentPage.BindingContext>
+        <local:MyPageViewModel/>
+    </ContentPage.BindingContext>
+
     <StackLayout>
-        <ListView x:Name="listView"
+        <ListView ItemsSource="{Binding People}"
                  VerticalOptions="FillAndExpand">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Text="{Binding Name}">
-                        <TextCell.ContextActions>
-                            <MenuItem Text="Menu1"
-                                      IconImageSource="profile.jpg"
-                                      Clicked="MenuItem1_Clicked"/>
-                            <MenuItem Text="Menu2"
-                                      Clicked="MenuItem2_Clicked"/>
-                            <MenuItem Text="Menu3"
-                                      Clicked="MenuItem3_Clicked"/>
-                        </TextCell.ContextActions>
-                    </TextCell>
+                    <EntryCell Text="{Binding Name}"
+                               Label="名前"
+                               Keyboard="Text"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+                 
     </StackLayout>
 
 </ContentPage>
