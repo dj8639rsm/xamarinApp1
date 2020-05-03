@@ -78,6 +78,7 @@ namespace xamarinApp1
         }
     }
 
+
     public partial class MainPage : ContentPage
     {
 
@@ -88,7 +89,7 @@ namespace xamarinApp1
 
         private async void Handle_Clicked(object sender, EventArgs e)
         {
-            await this.Navigation.PushModalAsync(new NextPage("これはパラメーターです"));
+            await this.Navigation.PushAsync(new NextPage("これはパラメーターです"));
         }
     }
 

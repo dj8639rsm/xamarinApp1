@@ -22,7 +22,7 @@ namespace xamarinApp1
       
         private async void Handle_Cliclked1(object sender, EventArgs e)
         {
-            await this.Navigation.PopModalAsync();
+            await this.Navigation.PopAsync();
         }
     }
 }

@@ -7,6 +7,7 @@
              xmlns:local="clr-namespace:xamarinApp1"
              x:Class="xamarinApp1.MainPage"
              x:Name="root"
+             Title="MainPage"
              NavigationPage.BackButtonTitle="Back">
     <!--バックボタン追加-->
 
