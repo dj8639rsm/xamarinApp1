@@ -14,26 +14,52 @@
             <On Platform="iOS">0,20,0,0</On>
         </OnPlatform>
     </ContentPage.Padding>
+    
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style TargetType="Label">
+            <Style x:Key="labelStyle"
+                TargetType="Label">
                 <Setter Property="HorizontalOptions"
                         Value="Center"/>
                 <Setter Property="FontSize"
                         Value="Large"/>
                 <Setter Property="FontAttributes"
-                        Value="Italic"/>
+                        Value="Italic" />
+            </Style>
+
+            <Style x:Key="blueLabelStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource labelStyle}">
+                <Setter Property="TextColor"
+                        Value="Blue"/>
+            </Style>
+
+            <Style x:Key="redLabelStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource labelStyle}">
+                <Setter Property="TextColor"
+                        Value="Red"/>
+            </Style>
+            <Style x:Key="yellowLabelStyle"
+                   TargetType="Label"
+                   BasedOn="{StaticResource labelStyle}">
+                <Setter Property="TextColor"
+                        Value="Yellow"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
-        <Label Text="同じスタイルを"/>
+        <Label Text="ベースとなるスタイル"
+               Style="{StaticResource labelStyle}"/>
 
-        <Label Text="適用したラベルを"/>
+        <Label Text="赤色のスタイル"
+               Style="{StaticResource redLabelStyle}"/>
 
-        <Label Text="設定する例"/>
+        <Label Text="黄色のスタイル"
+               Style="{StaticResource yellowLabelStyle}"/>
         
-        <Label Text="HelloWorld"/>
+        <Label Text="青色のスタイル"
+               Style="{StaticResource blueLabelStyle}"/>
     </StackLayout>
 
 </ContentPage>
