@@ -18,9 +18,10 @@
     </ContentPage.Padding>
 
     <StackLayout VerticalOptions="Center">
-        <SearchBar x:Name="searchBar"
-                   Placeholder="検索条件を入力してください"/>
-        <Label x:Name="label"
+        <Slider x:Name="slider"
+                Maximum="100"
+                Minimum="20"/>
+        <Label Text="{Binding Value,Source={x:Reference slider}}"
                HorizontalOptions="Center"/>
     </StackLayout>
     

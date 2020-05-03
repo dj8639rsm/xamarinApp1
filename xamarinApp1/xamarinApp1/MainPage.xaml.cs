@@ -85,10 +85,7 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-            this.searchBar.SearchCommand = new Command(_ =>
-            {
-                this.label.Text = $"{this.searchBar.Text}で検索しました";
-            });
+         
 
         }
 
