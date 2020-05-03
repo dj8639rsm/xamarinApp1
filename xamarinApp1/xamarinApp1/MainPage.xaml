@@ -18,10 +18,12 @@
     </ContentPage.Padding>
 
     <StackLayout VerticalOptions="Center">
-        <Slider x:Name="slider"
-                Maximum="100"
-                Minimum="20"/>
-        <Label Text="{Binding Value,Source={x:Reference slider}}"
+        <Stepper x:Name="stepper"
+                 Maximum="100"
+                 Minimum="20"
+                 Increment="5"
+                 HorizontalOptions="Center"/>
+        <Label Text="{Binding Value, Source={x:Reference stepper}}"
                HorizontalOptions="Center"/>
     </StackLayout>
     
