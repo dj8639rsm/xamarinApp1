@@ -15,13 +15,13 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <Grid>
-        <Grid.GestureRecognizers>
-            <PanGestureRecognizer PanUpdated="Handle_panUpdated"/>
-        </Grid.GestureRecognizers>
-        <Label x:Name="labelStatus"
-               Text="Display Status"
-               FontSize="Large"/>
-    </Grid>
+    <StackLayout HorizontalOptions="Start">
+        <Label Text="Default"/>
+        <Label Text="Rocation"
+               Rotation="45"
+               RotationX="-45"
+               RotationY="70"
+               FontSize="45"/>
+    </StackLayout>
 
 </ContentPage>
