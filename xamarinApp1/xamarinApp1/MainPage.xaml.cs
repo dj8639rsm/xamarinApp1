@@ -85,9 +85,14 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-          
+
         }
-       
+
+        //5秒かけてプログレスバーが８０パーセントの位置に移動する
+        private async void Handle_clicked(object sender, EventArgs e)
+        {
+            await this.progressBar.ProgressTo(0.8, 5000, Easing.Linear);
+        }
     }
 }
 

@@ -17,9 +17,9 @@
     </ContentPage.Padding>
 
     <StackLayout VerticalOptions="Center">
-        <Picker x:Name="picker"
-            ItemDisplayBinding="{Binding Name}"/>
-        <Label Text="{Binding SelectedItem.Name, Source={x:Reference picker}, StringFormat=`{0}さん`}"/>
-
+        <Button Text="ProgressTo"
+                Clicked="Handle_clicked"/>
+        <ProgressBar x:Name="progressBar"
+                     Progress="0.2"/>
     </StackLayout>
 </ContentPage>
