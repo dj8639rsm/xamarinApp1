@@ -49,17 +49,10 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
-        <Label Text="ベースとなるスタイル"
-               Style="{StaticResource labelStyle}"/>
-
-        <Label Text="赤色のスタイル"
-               Style="{StaticResource redLabelStyle}"/>
-
-        <Label Text="黄色のスタイル"
-               Style="{StaticResource yellowLabelStyle}"/>
-        
-        <Label Text="青色のスタイル"
-               Style="{StaticResource blueLabelStyle}"/>
+        <Label Text="ここのスタイルを実行時に切り替えます"
+               Style="{DynamicResource dynamicLabelStyle}"/>
+        <Button Text="スタイルの切り替え"
+                Clicked="Handle_Clicked"/>
     </StackLayout>
 
 </ContentPage>
