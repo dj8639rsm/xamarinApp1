@@ -85,14 +85,15 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
+            this.searchBar.SearchCommand = new Command(_ =>
+            {
+                this.label.Text = $"{this.searchBar.Text}で検索しました";
+            });
 
         }
 
-        //5秒かけてプログレスバーが８０パーセントの位置に移動する
-        private async void Handle_clicked(object sender, EventArgs e)
-        {
-            await this.progressBar.ProgressTo(0.8, 5000, Easing.Linear);
-        }
+        
+       
     }
 }
 

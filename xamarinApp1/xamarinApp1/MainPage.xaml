@@ -6,6 +6,7 @@
              mc:Ignorable="d"
              xmlns:local="clr-namespace:xamarinApp1"
              x:Class="xamarinApp1.MainPage"
+             x:Name="root"
              NavigationPage.BackButtonTitle="Back">
     <!--バックボタン追加-->
     
@@ -17,9 +18,11 @@
     </ContentPage.Padding>
 
     <StackLayout VerticalOptions="Center">
-        <Button Text="ProgressTo"
-                Clicked="Handle_clicked"/>
-        <ProgressBar x:Name="progressBar"
-                     Progress="0.2"/>
+        <SearchBar x:Name="searchBar"
+                   Placeholder="検索条件を入力してください"/>
+        <Label x:Name="label"
+               HorizontalOptions="Center"/>
     </StackLayout>
+    
+    
 </ContentPage>
