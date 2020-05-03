@@ -17,29 +17,11 @@
         </OnPlatform>
     </ContentPage.Padding>
 
+    <!--StringFormatはシングルコーテーションで囲む -->
     <StackLayout>
-        <TableView Intent="Settings">
-            <TableRoot>
-                <TableSection Title="Section1">
-                    <SwitchCell Text="Item1"
-                                On="True"/>
-                    <EntryCell Label="Item2"
-                               Text="Item2 text"/>
-                </TableSection>
-                <TableSection Title="Section2">
-                    <SwitchCell Text="Item3"
-                                On="True"/>
-                    <EntryCell Label="Item4"
-                               Text="Item2 text"/>
-                </TableSection>
-                <TableSection Title="Section3">
-                    <SwitchCell Text="Item5"
-                                On="True"/>
-                    <EntryCell Label="Item6"
-                               Text="Item2 text"/>
-                </TableSection>
-            </TableRoot>
-        </TableView>
+        <TimePicker x:Name="timePicker"/>
+        <Label Text="{Binding Time, Source={x:Reference timePicker}, StringFormat='{0} selected.'}" 
+               HorizontalOptions="Center"/>
     </StackLayout>
 
 
