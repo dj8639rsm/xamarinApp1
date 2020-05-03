@@ -22,8 +22,21 @@ namespace xamarinApp1
     public class Person
     {
         public string Name { get; set; }
+        public int Age { get; set; }
     }
 
+    public class PersonDataTemplateSelector:DataTemplateSelector
+    {
+        public DataTemplate SilverTempkate { get; set; }
+        public DataTemplate NormalTemplate { get; set; }
+
+        protected override DataTemplate OnSelectTemplate(object item, BindableObject container)
+        {
+           
+
+            return ((Person)item).Age >= 65 ? this.SilverTempkate : this.NormalTemplate;
+        }
+    }
     public class BindableBase : INotifyPropertyChanged
     {
 
@@ -71,6 +84,12 @@ namespace xamarinApp1
         public MainPage()
         {
             InitializeComponent();
+
+            var r = new Random();
+            this.listView.ItemsSource = Enumerable
+                .Range(1, 100)
+                .Select(x => new Person { Name = $"tanaka{x}", Age = 30 + r.Next(50) })
+                .ToArray();
         }
        
     }

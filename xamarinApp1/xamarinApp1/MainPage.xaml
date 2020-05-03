@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              xmlns:local="clr-namespace:xamarinApp1"
-             x:Class="xamarinApp1.MainPage">
+             x:Class="xamarinApp1.MainPage"
+             NavigationPage.BackButtonTitle="Back">
+    <!--バックボタン追加-->
     
     <!--iOS対応の余白設定-->
     <ContentPage.Padding>
@@ -14,30 +16,30 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.BindingContext>
-        <local:MyPageViewModel/>
-    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="normalTemplate">
+                <ViewCell>
+                    <Label Text="{Binding Name}"/>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="silverTemplate">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="☆"
+                               HorizontalOptions="Start"/>
+                        <Label Text="{Binding Name}"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+            <local:PersonDataTemplateSelector x:Key="personDataTemplateSelector"
+                                              SilverTempkate="{StaticResource silverTemplate}"
+                                              NormalTemplate="{StaticResource normalTemplate}"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
-    <StackLayout>
-        <ListView ItemsSource="{Binding People}"
-                 VerticalOptions="FillAndExpand"
-                  HasUnevenRows="True">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout>
-                            <Label Text="名前"/>
-                            <Label Text="{Binding Name}"
-                                   FontAttributes="Italic"/>
-                            <Image Source="40796.jpg"
-                                   HeightRequest="25"/>
-                        </StackLayout>
-                    </ViewCell>
-
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-                 
-    </StackLayout>
+    <ListView x:Name="listView"
+              ItemTemplate="{StaticResource personDataTemplateSelector}">
+    </ListView>
 
 </ContentPage>
