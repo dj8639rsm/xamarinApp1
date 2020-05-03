@@ -9,19 +9,12 @@
              x:Name="root"
              Title="MainPage">
 
-    
-    
-    
-    <ContentPage Title="Tab1">
-        <BoxView Color="Red"/>
-    </ContentPage>
-    <ContentPage Title="Tab2">
-        <BoxView Color="Blue"/>
-    </ContentPage>
-    <ContentPage Title="Tab3">
-        <BoxView Color="Olive"/>
-    </ContentPage>
-    
-    
+    <TabbedPage.ItemTemplate>
+        <DataTemplate>
+            <ContentPage Title="{Binding Title}">
+                <BoxView Color="{Binding Color}"/>
+            </ContentPage>
+        </DataTemplate>
+    </TabbedPage.ItemTemplate>
 
 </TabbedPage>

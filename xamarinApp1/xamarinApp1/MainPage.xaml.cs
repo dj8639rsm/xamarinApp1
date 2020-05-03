@@ -85,9 +85,22 @@ namespace xamarinApp1
         public MainPage()
         {
             InitializeComponent();
-        }
 
-       
+            //get,setの分かりやすい使い方
+            this.ItemsSource = new[]
+            {
+                new Item {Title = "Tab1", Color= "Red"},
+                new Item {Title = "Tab2", Color= "Blue"},
+                new Item {Title = "Tab3", Color= "Olive"},
+
+            };
+        }
+    }
+
+    public class Item
+    {
+        public string Title { get; set; }
+        public string Color { get; set; }
     }
 
     
