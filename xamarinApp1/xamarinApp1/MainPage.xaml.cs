@@ -86,14 +86,17 @@ namespace xamarinApp1
 
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();  
+        }
+        
+        private void PanGestureRecognizer_PanUpdated(object sender, PanUpdatedEventArgs e)
+        {
 
-           
         }
 
-        private void Handle_Tapped(object sender, EventArgs e)
+        private void Handle_panUpdated(object sender, PanUpdatedEventArgs e)
         {
-            ((Label)sender).Text = $"Tap Count is{++this.TapCount}";
+            this.labelStatus.Text = $"{e.StatusType}:({e.TotalX},{e.TotalY})";
         }
     }
 

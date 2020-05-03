@@ -15,13 +15,13 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <StackLayout>
-        <Label Text="Double tap!!">
-            <Label.GestureRecognizers>
-                <TapGestureRecognizer Tapped="Handle_Tapped"
-                                      NumberOfTapsRequired="2"/>
-            </Label.GestureRecognizers>
-        </Label>
-    </StackLayout>
+    <Grid>
+        <Grid.GestureRecognizers>
+            <PanGestureRecognizer PanUpdated="Handle_panUpdated"/>
+        </Grid.GestureRecognizers>
+        <Label x:Name="labelStatus"
+               Text="Display Status"
+               FontSize="Large"/>
+    </Grid>
 
 </ContentPage>
