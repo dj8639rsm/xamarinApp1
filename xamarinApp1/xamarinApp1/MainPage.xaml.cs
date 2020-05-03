@@ -85,11 +85,7 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-            var r = new Random();
-            this.listView.ItemsSource = Enumerable
-                .Range(1, 100)
-                .Select(x => new Person { Name = $"tanaka{x}", Age = 30 + r.Next(50) })
-                .ToArray();
+          
         }
        
     }

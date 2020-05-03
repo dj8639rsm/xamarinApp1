@@ -16,30 +16,10 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <DataTemplate x:Key="normalTemplate">
-                <ViewCell>
-                    <Label Text="{Binding Name}"/>
-                </ViewCell>
-            </DataTemplate>
-            <DataTemplate x:Key="silverTemplate">
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="☆"
-                               HorizontalOptions="Start"/>
-                        <Label Text="{Binding Name}"/>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-            <local:PersonDataTemplateSelector x:Key="personDataTemplateSelector"
-                                              SilverTempkate="{StaticResource silverTemplate}"
-                                              NormalTemplate="{StaticResource normalTemplate}"/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+    <StackLayout VerticalOptions="Center">
+        <Picker x:Name="picker"
+            ItemDisplayBinding="{Binding Name}"/>
+        <Label Text="{Binding SelectedItem.Name, Source={x:Reference picker}, StringFormat=`{0}さん`}"/>
 
-    <ListView x:Name="listView"
-              ItemTemplate="{StaticResource personDataTemplateSelector}">
-    </ListView>
-
+    </StackLayout>
 </ContentPage>
