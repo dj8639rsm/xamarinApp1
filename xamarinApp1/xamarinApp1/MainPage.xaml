@@ -16,8 +16,7 @@
     </ContentPage.Padding>
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="labelStyle"
-                   TargetType="Label">
+            <Style TargetType="Label">
                 <Setter Property="HorizontalOptions"
                         Value="Center"/>
                 <Setter Property="FontSize"
@@ -28,17 +27,13 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
-        <Label Text="同じスタイルを"
-               Style="{StaticResource labelStyle}"/>
-        <Label Text="適用したラベルを"
-               Style="{StaticResource labelStyle}"/>
-        <Label Text="設定する例"
-               Style="{StaticResource labelStyle}"/>
-        <Label Text="HelloWorld"
-               Style="{StaticResource labelStyle}"/>
+        <Label Text="同じスタイルを"/>
+
+        <Label Text="適用したラベルを"/>
+
+        <Label Text="設定する例"/>
+        
+        <Label Text="HelloWorld"/>
     </StackLayout>
-
-
-
 
 </ContentPage>
