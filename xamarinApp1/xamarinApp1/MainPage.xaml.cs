@@ -77,27 +77,14 @@ namespace xamarinApp1
 
         }
     }
-
-
     public partial class MainPage : ContentPage
     {
-
         private int TapCount { get; set; }
 
         public MainPage()
         {
             InitializeComponent();  
         }
-        
-        
     }
-
-    public class Item
-    {
-        public string Title { get; set; }
-        public string Color { get; set; }
-    }
-
-    
 }
 

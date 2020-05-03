@@ -15,13 +15,17 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <StackLayout HorizontalOptions="Start">
-        <Label Text="Default"/>
-        <Label Text="Rocation"
-               Rotation="45"
-               RotationX="-45"
-               RotationY="70"
-               FontSize="45"/>
+    <StackLayout>
+        <Entry>
+            <Entry.Triggers>
+                <Trigger TargetType="Entry"
+                         Property="IsFocused"
+                         Value="true">
+                    <Setter Property="BackgroundColor"
+                            Value="Olive"/>
+                </Trigger>
+            </Entry.Triggers>
+        </Entry>
     </StackLayout>
 
 </ContentPage>
