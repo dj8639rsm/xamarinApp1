@@ -92,19 +92,6 @@ namespace xamarinApp1
         }
     }
 
-    public partial class NextPage:ContentPage
-    {
-        public NextPage(string parameter)
-        {
-            InitializeComponent();
-
-            this.label.Text = parameter;
-        }
-
-        private async void Handle_Cliclked1(object sender, EventArgs e)
-        {
-            await this.Navigation.PopModalAsync();
-        }
-    }
+    
 }
 
