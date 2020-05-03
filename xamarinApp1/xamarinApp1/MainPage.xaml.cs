@@ -79,7 +79,7 @@ namespace xamarinApp1
     }
 
 
-    public partial class MainPage : ContentPage
+    public partial class MainPage : TabbedPage
     {
 
         public MainPage()
@@ -87,10 +87,7 @@ namespace xamarinApp1
             InitializeComponent();
         }
 
-        private async void Handle_Clicked(object sender, EventArgs e)
-        {
-            await this.Navigation.PushAsync(new NextPage("これはパラメーターです"));
-        }
+       
     }
 
     

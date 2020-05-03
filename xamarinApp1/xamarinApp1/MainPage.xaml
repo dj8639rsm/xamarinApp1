@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,15 +9,19 @@
              x:Name="root"
              Title="MainPage">
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Menu1"
-                     Clicked="Handle_Clicked"/>
-        <ToolbarItem Text="Menu2"
-                     Clicked="Handle_Clicked"/>
-    </ContentPage.ToolbarItems>
-    <StackLayout HorizontalOptions="Center">
-        <Button Text="NavigationTo NextPage"
-                Clicked="Handle_Clicked"/>
-    </StackLayout>
+    
+    
+    
+    <ContentPage Title="Tab1">
+        <BoxView Color="Red"/>
+    </ContentPage>
+    <ContentPage Title="Tab2">
+        <BoxView Color="Blue"/>
+    </ContentPage>
+    <ContentPage Title="Tab3">
+        <BoxView Color="Olive"/>
+    </ContentPage>
+    
+    
 
-</ContentPage>
+</TabbedPage>
