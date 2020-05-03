@@ -7,13 +7,17 @@
              xmlns:local="clr-namespace:xamarinApp1"
              x:Class="xamarinApp1.MainPage"
              x:Name="root"
-             Title="MainPage"
-             NavigationPage.BackButtonTitle="Back">
-    <!--バックボタン追加-->
+             Title="MainPage">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Menu1"
+                     Clicked="Handle_Clicked"/>
+        <ToolbarItem Text="Menu2"
+                     Clicked="Handle_Clicked"/>
+    </ContentPage.ToolbarItems>
     <StackLayout HorizontalOptions="Center">
-        <Button Text="NavigateTo NextPage"
+        <Button Text="NavigationTo NextPage"
                 Clicked="Handle_Clicked"/>
     </StackLayout>
-    
+
 </ContentPage>
