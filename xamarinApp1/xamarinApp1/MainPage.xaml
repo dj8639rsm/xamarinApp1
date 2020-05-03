@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -9,12 +9,36 @@
              x:Name="root"
              Title="MainPage">
 
-    <TabbedPage.ItemTemplate>
-        <DataTemplate>
-            <ContentPage Title="{Binding Title}">
-                <BoxView Color="{Binding Color}"/>
-            </ContentPage>
-        </DataTemplate>
-    </TabbedPage.ItemTemplate>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS">0,20,0,0</On>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle"
+                   TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="FontSize"
+                        Value="Large"/>
+                <Setter Property="FontAttributes"
+                        Value="Italic"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Label Text="同じスタイルを"
+               Style="{StaticResource labelStyle}"/>
+        <Label Text="適用したラベルを"
+               Style="{StaticResource labelStyle}"/>
+        <Label Text="設定する例"
+               Style="{StaticResource labelStyle}"/>
+        <Label Text="HelloWorld"
+               Style="{StaticResource labelStyle}"/>
+    </StackLayout>
 
-</TabbedPage>
+
+
+
+</ContentPage>

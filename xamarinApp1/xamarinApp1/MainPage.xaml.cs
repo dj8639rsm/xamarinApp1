@@ -79,7 +79,7 @@ namespace xamarinApp1
     }
 
 
-    public partial class MainPage : TabbedPage
+    public partial class MainPage : ContentPage
     {
 
         public MainPage()
@@ -87,13 +87,7 @@ namespace xamarinApp1
             InitializeComponent();
 
             //get,setの分かりやすい使い方
-            this.ItemsSource = new[]
-            {
-                new Item {Title = "Tab1", Color= "Red"},
-                new Item {Title = "Tab2", Color= "Blue"},
-                new Item {Title = "Tab3", Color= "Olive"},
-
-            };
+          
         }
     }
 
