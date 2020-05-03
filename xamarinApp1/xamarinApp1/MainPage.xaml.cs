@@ -82,6 +82,8 @@ namespace xamarinApp1
     public partial class MainPage : ContentPage
     {
 
+        private int TapCount { get; set; }
+
         public MainPage()
         {
             InitializeComponent();
@@ -89,7 +91,10 @@ namespace xamarinApp1
            
         }
 
-      
+        private void Handle_Tapped(object sender, EventArgs e)
+        {
+            ((Label)sender).Text = $"Tap Count is{++this.TapCount}";
+        }
     }
 
     public class Item

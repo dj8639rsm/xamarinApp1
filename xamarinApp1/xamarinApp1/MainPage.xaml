@@ -15,36 +15,13 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="customTitleStyle"
-                TargetType="Label"
-               BaseResourceKey="TitleStyle">
-                <Setter Property="TextColor"
-                        Value="Red"/>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
-
     <StackLayout>
-        <Label Text="カスタムのたいとる"
-               Style="{StaticResource customTitleStyle}"/>
-        <Label Text="タイトル"
-               Style="{DynamicResource TitleStyle}"/>
-        <Label Text="サブタイトル"
-               Style="{DynamicResource SubtitleStyle}"/>
-        <Label Text="キャプション"
-               Style="{DynamicResource CaptinStyle}"/>
-        <Label Text="リストのテキスト"
-               Style="{DynamicResource ListItemTextStyle}"/>
-        <Label Text="リストの詳細テキスト"
-               Style="{DynamicResource ListItemDetailStyle}"/>
-        <Label Text="ボディ"
-               Style="{DynamicResource BodyStyle}"/>
-        <Label Text="未指定"/>
-
-
-
+        <Label Text="Double tap!!">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="Handle_Tapped"
+                                      NumberOfTapsRequired="2"/>
+            </Label.GestureRecognizers>
+        </Label>
     </StackLayout>
 
 </ContentPage>
