@@ -16,16 +16,19 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Entry>
-            <Entry.Triggers>
-                <Trigger TargetType="Entry"
-                         Property="IsFocused"
-                         Value="true">
-                    <Setter Property="BackgroundColor"
-                            Value="Olive"/>
-                </Trigger>
-            </Entry.Triggers>
-        </Entry>
+        <Entry x:Name="entry"
+               Text=""/>
+        <Button Text="OK">
+            <Button.Triggers>
+                <DataTrigger TargetType="Button"
+                             Binding="{Binding Text.Length, Source={x:Reference entry}}"
+                             Value="0">
+                    <Setter Property="IsEnabled"
+                            Value="False"/>
+                </DataTrigger>
+            </Button.Triggers>
+        </Button>
     </StackLayout>
-
+    
+    
 </ContentPage>
