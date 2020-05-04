@@ -16,19 +16,13 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Entry x:Name="entry"
-               Text=""/>
-        <Button Text="OK">
-            <Button.Triggers>
-                <DataTrigger TargetType="Button"
-                             Binding="{Binding Text.Length, Source={x:Reference entry}}"
-                             Value="0">
-                    <Setter Property="IsEnabled"
-                            Value="False"/>
-                </DataTrigger>
-            </Button.Triggers>
-        </Button>
+        <ListView>
+            <ListView.Triggers>
+                <EventTrigger Event="ItemSelected">
+                    <local:NotSelectableListViewTrggerAction/>
+                </EventTrigger>
+            </ListView.Triggers>
+        </ListView>
     </StackLayout>
-    
     
 </ContentPage>

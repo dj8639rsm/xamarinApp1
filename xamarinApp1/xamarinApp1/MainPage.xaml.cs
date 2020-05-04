@@ -19,6 +19,14 @@ namespace xamarinApp1
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
+    public class NotSelectableListViewTrggerAction:TriggerAction<ListView>
+    {
+        protected override void Invoke(ListView sender)
+        {
+            sender.SelectedItem = null;
+        }
+    }
+
     public class Person
     {
         public string Name { get; set; }
