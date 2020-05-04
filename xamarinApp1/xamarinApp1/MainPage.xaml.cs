@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Dynamic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -19,7 +20,22 @@ namespace xamarinApp1
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
-    public class NotSelectableListViewTrggerAction:TriggerAction<ListView>
+
+
+    public class isGreaterZeroConverter:IValueConverter
+    {
+        public object Converter(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return ((int)value) > 0;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotSupportedException();
+        }
+    }
+
+public class NotSelectableListViewTrggerAction:TriggerAction<ListView>
     {
         protected override void Invoke(ListView sender)
         {

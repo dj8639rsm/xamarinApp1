@@ -15,14 +15,34 @@
         </OnPlatform>
     </ContentPage.Padding>
 
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout>
-        <ListView>
-            <ListView.Triggers>
-                <EventTrigger Event="ItemSelected">
-                    <local:NotSelectableListViewTrggerAction/>
-                </EventTrigger>
-            </ListView.Triggers>
-        </ListView>
+        <Entry x:Name="entryUserName"
+               Text=""/>
+        <Entry x:Name="entyrPassword"
+               IsPassword="True"
+               Text=""/>
+        <Button Text="Login"
+                IsEnabled="False">
+            <Button.Triggers>
+                <MultiTrigger TargetType="Button">
+                    <MultiTrigger.Conditions>
+                        <BindingCondition Binding="{Binding Text.Length, Source={x:Reference entryUserName},
+                            Converter={StaticResource isGreaterZeroConverter}}"
+                                          Value="true"/>
+                        <BindingCondition Binding="{Binding Text.Length, Source={x:Reference entyrPassword},
+                            Converter={StaticResource isGreaterZeroConverter}}"
+                                          Value="true"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="IsEnabled"
+                            Value="True"/>
+                </MultiTrigger>
+            </Button.Triggers>
+        </Button>
     </StackLayout>
-    
+
 </ContentPage>
