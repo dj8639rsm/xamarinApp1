@@ -18,6 +18,7 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.PlatformConfiguration;
 
+
 namespace xamarinApp1
 {
 
@@ -25,11 +26,13 @@ namespace xamarinApp1
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
-    public interface IplatformNameProvider
+    public class UnderlineEffect:RoutingEffect
     {
-        string GetName();
+        public UnderlineEffect():base("XamarinApp1.UnderlineEffect")
+        {
+
+        }
     }
-   
     
     public partial class MainPage : ContentPage
     {
@@ -37,37 +40,6 @@ namespace xamarinApp1
         {
             InitializeComponent();
 
-
-            //iOSに余白を持たせる
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    this.Padding = new Thickness(0, 20, 0, 0);
-                    break;
-            }
-
-            this.labelPlatform.Text = DependencyService
-                .Get<IplatformNameProvider>()
-                .GetName();
-
-        }
-
-
-
-        private void Handle_clicked(object sender, EventArgs e)
-        {
-            if(Device.RuntimePlatform == Device.iOS)
-            {
-                Launcher.OpenAsync("http://maps.apple.com/?q=Tokyo");
-            }
-           
-            else if (Device.RuntimePlatform == Device.Android)
-            {
-                Launcher.OpenAsync("geo:0,0?q=Tokyo");
-            }
-
-
-           
         }
     }
 }

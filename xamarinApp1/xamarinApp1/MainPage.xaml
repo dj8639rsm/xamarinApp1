@@ -15,7 +15,14 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <StackLayout>
-        <Label x:Name="labelPlatform"/>
+    <StackLayout HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <Label x:Name="labelTimer"
+               FontSize="Large">
+            <Label.Effects>
+                <local:UnderlineEffect/>
+            </Label.Effects>
+        </Label>
+        
     </StackLayout>
 </ContentPage>

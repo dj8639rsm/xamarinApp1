@@ -6,20 +6,39 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using Java.Interop;
+using Xamarin.Forms.Platform.Android;
 
-[assembly: Xamarin.Forms.Dependency(typeof(xamarinApp1.Droid.PlatformNameProvider))]
+[assembly: ResolutionGroupName("xamarinApp1")]
+[assembly: ExportEffect(typeof(xamarinApp1.Droid.UnderlineEffect), "UnderlineEffect")]
 namespace xamarinApp1.Droid
 {
     [Activity(Label = "xamarinApp1", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-  
-    public class PlatformNameProvider:IplatformNameProvider
+
+    public class MyActivity : Activity
     {
-        public string GetName()
+
+    }
+
+    public class UnderlineEffect : PlatformEffect
+    {
+        protected override void OnAttached()
         {
-            return "Android";
+            var label = this.Control as TextView;
+            if(label == null) { return; }
+
+            label.PaintFlags = label.PaintFlags | Android.Graphics.PaintFlags.UnderlineText;
+        }
+
+        protected override void OnDetached()
+        {
+            throw new NotImplementedException();
         }
     }
+
+
     
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
