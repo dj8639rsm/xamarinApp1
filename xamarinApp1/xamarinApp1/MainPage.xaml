@@ -17,7 +17,7 @@
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:/>
+            <local:NotSelectableListViewTrggerAction/>
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout>
