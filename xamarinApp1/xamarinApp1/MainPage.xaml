@@ -16,7 +16,6 @@
     </ContentPage.Padding>
 
     <StackLayout>
-        <Button Text="Open map"
-                Clicked="Handle_clicked"/>
+        <Label x:Name="labelPlatform"/>
     </StackLayout>
 </ContentPage>

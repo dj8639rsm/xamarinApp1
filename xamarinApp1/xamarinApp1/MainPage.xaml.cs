@@ -25,7 +25,10 @@ namespace xamarinApp1
     // by visiting https://aka.ms/xamarinforms-previewer
     [DesignTimeVisible(false)]
 
-
+    public interface IplatformNameProvider
+    {
+        string GetName();
+    }
    
     
     public partial class MainPage : ContentPage
@@ -43,7 +46,13 @@ namespace xamarinApp1
                     break;
             }
 
+            this.labelPlatform.Text = DependencyService
+                .Get<IplatformNameProvider>()
+                .GetName();
+
         }
+
+
 
         private void Handle_clicked(object sender, EventArgs e)
         {

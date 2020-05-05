@@ -7,9 +7,20 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 
+[assembly: Xamarin.Forms.Dependency(typeof(xamarinApp1.Droid.PlatformNameProvider))]
 namespace xamarinApp1.Droid
 {
-    [Activity(Label = "xamarinApp1", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "xamarinApp1", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true,
+        ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+  
+    public class PlatformNameProvider:IplatformNameProvider
+    {
+        public string GetName()
+        {
+            return "Android";
+        }
+    }
+    
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)

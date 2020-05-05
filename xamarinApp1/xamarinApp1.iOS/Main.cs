@@ -5,8 +5,17 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
+[assembly: Xamarin.Forms.Dependency(typeof(xamarinApp1.iOS.PlatformNameProvider))]
 namespace xamarinApp1.iOS
 {
+
+    public class PlatformNameProvider : IplatformNameProvider
+    {
+        public string GetName()
+        {
+            return "iOS";
+        }
+    }
     public class Application
     {
         // This is the main entry point of the application.
