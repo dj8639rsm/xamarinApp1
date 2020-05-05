@@ -15,34 +15,10 @@
         </OnPlatform>
     </ContentPage.Padding>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <local:NotSelectableListViewTrggerAction/>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <StackLayout>
-        <Entry x:Name="entryUserName"
-               Text=""/>
-        <Entry x:Name="entyrPassword"
-               IsPassword="True"
-               Text=""/>
-        <Button Text="Login"
-                IsEnabled="False">
-            <Button.Triggers>
-                <MultiTrigger TargetType="Button">
-                    <MultiTrigger.Conditions>
-                        <BindingCondition Binding="{Binding Text.Length, Source={x:Reference entryUserName},
-                            Converter={StaticResource isGreaterZeroConverter}}"
-                                          Value="true"/>
-                        <BindingCondition Binding="{Binding Text.Length, Source={x:Reference entyrPassword},
-                            Converter={StaticResource isGreaterZeroConverter}}"
-                                          Value="true"/>
-                    </MultiTrigger.Conditions>
-                    <Setter Property="IsEnabled"
-                            Value="True"/>
-                </MultiTrigger>
-            </Button.Triggers>
-        </Button>
+        <Button Text="NextPage"
+                Clicked="ButtonNextPage_Clicked"/>
+        <Label x:Name="labelState"
+               FontSize="Large"/>
     </StackLayout>
-
 </ContentPage>

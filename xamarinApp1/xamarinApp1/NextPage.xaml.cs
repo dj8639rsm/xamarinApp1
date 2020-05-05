@@ -12,17 +12,18 @@ namespace xamarinApp1
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NextPage : ContentPage
     {
-        public NextPage(string paramater)
+        public NextPage()
         {
             InitializeComponent();
-
-            this.label.Text = paramater;
         }
 
-      
-        private async void Handle_Cliclked1(object sender, EventArgs e)
+        private async void Handle_clicked(object sender, EventArgs e)
         {
-            await this.Navigation.PopAsync();
+            MessagingCenter.Send<NextPage, DateTime>(
+                this,
+                "completed",
+                DateTime.Now);
+            await this.Navigation.PopModalAsync();
         }
     }
 }

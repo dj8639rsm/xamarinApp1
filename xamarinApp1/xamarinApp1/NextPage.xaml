@@ -9,9 +9,8 @@
 
     <StackLayout HorizontalOptions="Center"
                  VerticalOptions="Center">
-        <Label x:Name="label"
-               FontSize="Large"/>
-        <Button Text="GoBack"
-                Clicked="Handle_Cliclked1"/>
+        <Button Text="Do something"
+                Clicked="Handle_clicked"/>
     </StackLayout>
+
 </ContentPage>
